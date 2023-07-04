@@ -1,5 +1,11 @@
 const std = @import("std");
 
+pub const m = enum {
+    banana,
+    apple,
+    orange,
+};
+
 pub const personInfo = struct {
     name: []const u8,
     age: i32,
@@ -43,4 +49,12 @@ pub fn al(per: personInfo) !void {
     std.debug.print("Name: {s} Age: {d}\n", .{ newPerson.name, newPerson.age });
 
     allocater.destroy(newPerson);
+}
+
+pub fn r(num: i64) m {
+    switch (num) {
+        1 => return .apple,
+        3 => return .orange,
+        else=>return .banana
+    }
 }
