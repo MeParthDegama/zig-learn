@@ -1,6 +1,6 @@
 const std = @import("std");
 
-const personInfo = struct {
+pub const personInfo = struct {
     name: []const u8,
     age: i32,
 };
@@ -27,7 +27,7 @@ pub fn main() !void {
     }) catch std.debug.print("Error\n", .{});
 }
 
-fn al(per: personInfo) !void {
+pub fn al(per: personInfo) !void {
     var allo = std.heap.GeneralPurposeAllocator(.{}){};
     defer _ = allo.deinit();
 
